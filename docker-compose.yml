@@ -3,12 +3,13 @@ version: '3.8'
 services: 
   postgres:
     container_name: 'postgres'
-    env_file: ./backend/docker.env
-    build: 
-      context: ./backend
-      dockerfile: dockerfile.db 
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "postgres"
+    image: postgres:13.3
     ports:
-      - '5050:5050'
+      - '5050:5432'
     volumes:
       - ./.database/postgres/data:/data/
   api: 
@@ -22,13 +23,13 @@ services:
     depends_on:
       - postgres
     restart: always
-  front:
-    container_name: 'front'
-    build: 
-      context: ./frontend
-      dockerfile: dockerfile
-    ports:
-      - '3000:3000'
-    depends_on:
-      - api
-    restart: always
+  # front:
+  #   container_name: 'front'
+  #   build: 
+  #     context: ./frontend
+  #     dockerfile: dockerfile
+  #   ports:
+  #     - '3000:3000'
+  #   depends_on:
+  #     - api
+  #   restart: always

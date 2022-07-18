@@ -30,3 +30,10 @@ export interface ITruckingList {
     perPage: number;
     count: number    
 }
+
+export interface ITruckingCreate {
+    name: string,
+    date: Date,
+    count: number,
+    distance: number
+  }
