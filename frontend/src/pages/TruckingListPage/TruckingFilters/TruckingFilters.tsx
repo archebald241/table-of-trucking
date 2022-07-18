@@ -3,6 +3,8 @@ import "./TruckingFilters.scss"
 import { IconSearch } from '../../../assets/Icons'
 import Input from '../../../components/UI/Input'
 import Select from '../../../components/UI/Select'
+import { ITruckingCreate } from '../../../types/truckingList'
+import { createTrucking } from '../../../api/truckingList'
 
 
 const orderBy = [
@@ -52,6 +54,17 @@ const TruckingFilters: React.FC<IProps> = ({setFilter}) => {
     const [valOrderBy, setValOrderBy] = useState(orderBy[0].value)
     const [valOrderDesc, setValOrderDesc] = useState(orderDesc[0].value)
 
+    const create = () => {
+        const data: ITruckingCreate = {
+            name: "name",
+            count: 10,
+            date: new Date("12.02.2022"),
+            distance: 12
+        }
+
+        createTrucking(data)
+    }
+
     useEffect(() => {
         const newFilters = {
             value: searchText,
@@ -80,6 +93,7 @@ const TruckingFilters: React.FC<IProps> = ({setFilter}) => {
                 value={valOrderDesc}
                 setValue={setValOrderDesc}
             />
+            <button onClick={create}>Добавить</button>
         </div>
     )
 }

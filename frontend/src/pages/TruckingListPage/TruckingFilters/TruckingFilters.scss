@@ -1,9 +1,25 @@
+@import "src/styles/variables";
+
+
 .truckingFilters{
     display: flex;
     flex-direction: row;
 
     >*{
         margin: 0 10px;
+    }
+
+    button{
+        background-color: $base-color;
+        border: 2px $primary-color solid;
+        padding: 0 20px;
+        border-radius: $border-radius;
+        cursor: pointer;
+
+        &:active{
+            background-color: $primary-color;
+            color: $base-color;
+        }
     }
 
     @media screen and (max-width: 800px) {
