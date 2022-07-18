@@ -1,0 +1,4 @@
+FROM postgres:latest
+WORKDIR usr/src/postgres
+
+EXPOSE 5050

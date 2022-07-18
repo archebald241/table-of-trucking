@@ -1,0 +1,10 @@
+@import "src/styles/variables";
+
+.truckingListPage{
+    margin: 24px;
+    padding: 24px;
+    background: $base-color;
+    min-height: calc(100vh - 68px - 48px);
+    width: calc(100% - 48px);
+    border-radius: $border-radius;
+}

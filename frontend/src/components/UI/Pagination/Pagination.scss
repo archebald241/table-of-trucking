@@ -1,0 +1,70 @@
+@import "src/styles/variables";
+
+.Pagination{
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px;
+
+    >*{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin: 0 10px;
+
+        .arrow{
+            cursor: pointer;
+        }
+
+        .pageNums {
+            span {
+                display: inline-block;
+                padding: 10px;
+                font-size: 16px;
+                margin: 0 4px;
+                width: 40px;
+                height: 40px;
+                text-align: center;
+
+                &.number {
+                    background: $modest-color;
+                    border-radius: 50px;
+                    cursor: pointer;
+                }
+
+                &.current {
+                    background: $primary-color;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .selectContainer{
+        position: relative;
+
+        select{
+            cursor: pointer;
+            padding: 10px 30px 10px 10px;
+            border-radius: $border-radius;
+            background: $modest-color;
+            border: none;
+            font-size: 16px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+
+            &:active, &:hover, &:focus{
+                outline: none;
+            }
+
+        }
+        
+        .selectIcon{
+            position: absolute;
+            top: 10px;
+            right: 3px;
+            z-index: 5;
+        }
+    }
+}

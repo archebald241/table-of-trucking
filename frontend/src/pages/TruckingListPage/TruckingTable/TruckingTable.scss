@@ -1,0 +1,65 @@
+@import "src/styles/variables";
+
+.truckingTable {
+    margin: 24px 0;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+
+    thead {
+        border-radius: 10px;
+
+        th {
+            vertical-align: middle;
+            border-bottom: 1px $border-modest-color solid;
+        }
+    }
+
+    tbody {
+        tr {
+            &:hover {
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25), 0px 13px 4px rgba(171, 185, 252, 0.24);
+            }
+        }
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 10px;
+    }
+
+    th {
+        font-size: 18px;
+    }
+
+    td {
+        font-size: 16px;
+    }
+
+
+    @media screen and (max-width: 800px) {
+
+        thead {
+            display: none;
+        }
+
+        tr {
+            display: block;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e8e9eb;
+        }
+
+        td {
+            display: block;
+            text-align: right;
+
+            &:before {
+                content: attr(aria-label);
+                float: left;
+                font-weight: bold;
+            }
+        }
+
+    }
+}

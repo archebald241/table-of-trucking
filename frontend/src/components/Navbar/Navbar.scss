@@ -1,0 +1,15 @@
+@import "src/styles/variables";
+
+.navbar{
+    padding: 24px;
+    background: $base-color;
+    max-height: 68px;
+
+    font-size: 18px;
+
+    span{
+        font-size: 24px;
+        font-weight: 600;
+        color: $font-primary-color
+    }
+}
